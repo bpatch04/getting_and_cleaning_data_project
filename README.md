@@ -1,17 +1,10 @@
-# getting_and_cleaning_data_project
-Course Project for Data Science Specialization Getting and Cleaning Data
-
 ---
 title: "README"
 Author: 'Brent Patchin'
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-library('dplyr')
-```
-
-# R Markdown
+# Markdown
 
 This is an READ ME Markdown document for the Coursera Data Science Specialization, Getting and Data Cleaning, Course Project.
 
@@ -19,7 +12,7 @@ This is an READ ME Markdown document for the Coursera Data Science Specializatio
 
 The first step is to read the activities table. This table shows 6 activities and their activity id, we will name the fields to make it easy to lookup the activity names later on.
 
-```{r, echo=FALSE}
+```{r}
 act_lab <- read.csv('getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt',header=F,sep=" ")
 names(act_lab) <- c('activity_id','activity')
 ```
@@ -35,7 +28,7 @@ Then we will read in the features table. This table shows the feature ID and the
 6. We updated the features that start with f to Freq
 7. Finally we changed all of the dashes to periods so we can use these as field names in the final tidy dataset
 
-```{r, echo=FALSE}
+```{r}
 features <- read.csv('getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt',header=F,sep=" ")
 features$V2 <- sub("[)]([0-9])$",")-\\1",features$V2)
 features$V2 <- sub("(.*)[)],(.*)","\\1,\\2",features$V2)
@@ -134,6 +127,7 @@ write.table(syx_tidy,'getdata_projectfiles_UCI HAR Dataset/syx_tidy.txt',row.nam
 ### Grouping and Summary
 
 We now group by the subjects and activity and take the mean/standard deviations of all of the other columns. Then we combine these two summary tables into one table and remove the duplicated subject/acivity columns.
+Then we pivot the features to be a single column with a value column.
 
 ```{r, echo=FALSE}
 syx_mean2 <- syx_mean %>% group_by(subject,activity) %>% summarize_all(funs(mean))
@@ -142,6 +136,7 @@ syx_std2 <- syx_std %>% group_by(subject,activity) %>% summarize_all(funs(mean))
 syx_summarized <- cbind(syx_mean2,syx_std2)
 syx_summarized <- select(syx_summarized,-(36:37))
 colnames(syx_summarized)[1:2] <- c('subject','activity')
+syx_summarized <- pivot_longer(syx_summarized,!(subject:activity), names_to = "features", values_to = "value")
 ```
 
 ### Final summarized tidy dataset
