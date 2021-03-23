@@ -76,6 +76,7 @@ syx_std2 <- syx_std %>% group_by(subject,activity) %>% summarize_all(funs(mean))
 syx_summarized <- cbind(syx_mean2,syx_std2)
 syx_summarized <- select(syx_summarized,-(36:37))
 colnames(syx_summarized)[1:2] <- c('subject','activity')
+syx_summarized <- pivot_longer(syx_summarized,!(subject:activity), names_to = "features", values_to = "value")
 
 #this is the final tidy dataset that is summarized
 syx_summarized
