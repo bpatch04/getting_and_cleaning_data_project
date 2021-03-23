@@ -1,0 +1,86 @@
+CodeBook 
+=================
+
+subjects: This shows the subject (participant) in the study. There are 30 subjects
+
+activity: The 30 subjects performed one or more of the 6 activities.
+	STANDING
+	SITTING
+	LAYING
+	WALKING
+
+	WALKING_UPSTAIRS
+
+	WALKING_DOWNSTAIRS
+
+
+
+Values: provides the mean or standard deviation of the feature for the subject and activity
+
+Features: These are the features calculated in the study.
+	TimeBodyAcc.mean.X
+	TimeBodyAcc.mean.Y
+	TimeBodyAcc.mean.Z
+	TimeGravityAcc.mean.X
+	TimeGravityAcc.mean.Y
+	TimeGravityAcc.mean.Z
+	TimeBodyAccJerk.mean.X
+	TimeBodyAccJerk.mean.Y
+	TimeBodyAccJerk.mean.Z
+	TimeBodyGyro.mean.X
+	TimeBodyGyro.mean.Y
+	TimeBodyGyro.mean.Z
+	TimeBodyGyroJerk.mean.X
+	TimeBodyGyroJerk.mean.Y
+	TimeBodyGyroJerk.mean.Z
+	TimeBodyAccMag.mean
+	TimeGravityAccMag.mean
+	TimeBodyAccJerkMag.mean
+	TimeBodyGyroMag.mean
+	TimeBodyGyroJerkMag.mean
+	FreqBodyAcc.mean.X
+	FreqBodyAcc.mean.Y
+	FreqBodyAcc.mean.Z
+	FreqBodyAccJerk.mean.X
+	FreqBodyAccJerk.mean.Y
+	FreqBodyAccJerk.mean.Z
+	FreqBodyGyro.mean.X
+	FreqBodyGyro.mean.Y
+	FreqBodyGyro.mean.Z
+	FreqBodyAccMag.mean
+	FreqBodyBodyAccJerkMag.mean
+	FreqBodyBodyGyroMag.mean
+	FreqBodyBodyGyroJerkMag.mean
+	TimeBodyAcc.std.X
+	TimeBodyAcc.std.Y
+	TimeBodyAcc.std.Z
+	TimeGravityAcc.std.X
+	TimeGravityAcc.std.Y
+	TimeGravityAcc.std.Z
+	TimeBodyAccJerk.std.X
+	TimeBodyAccJerk.std.Y
+	TimeBodyAccJerk.std.Z
+	TimeBodyGyro.std.X
+	TimeBodyGyro.std.Y
+	TimeBodyGyro.std.Z
+	TimeBodyGyroJerk.std.X
+	TimeBodyGyroJerk.std.Y
+	TimeBodyGyroJerk.std.Z
+	TimeBodyAccMag.std
+	TimeGravityAccMag.std
+	TimeBodyAccJerkMag.std
+	TimeBodyGyroMag.std
+	TimeBodyGyroJerkMag.std
+	FreqBodyAcc.std.X
+	FreqBodyAcc.std.Y
+	FreqBodyAcc.std.Z
+	FreqBodyAccJerk.std.X
+	FreqBodyAccJerk.std.Y
+	FreqBodyAccJerk.std.Z
+	FreqBodyGyro.std.X
+	FreqBodyGyro.std.Y
+	FreqBodyGyro.std.Z
+	FreqBodyAccMag.std
+	FreqBodyBodyAccJerkMag.std
+	FreqBodyBodyGyroMag.std
+	FreqBodyBodyGyroJerkMag.std
